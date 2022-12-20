@@ -2,22 +2,29 @@
 
 /**
  * rev_string - reverses a atring
- * @s: input
- * Return: string in reverse
+ * @s: pointer to string
+ *
+ * Return: void.
  */
 void rev_string(char *s)
 {
-	char rv = s[0];
-	int c = 0;
-	int i;
+	int i, j, k, temp;
 
-	while (s[c] != '\0')
-		c++;
-	for (i = 0; i < c; i++)
+	i = 0;
+
+	while (s[i] != '\0')
 	{
-		c--;
-		rv = s[c];
-		s[i] = s[c];
-		s[c] = rv;
+		i++;
+	}
+	k = 0;
+	j = i - 1;
+
+	while (k < j)
+	{
+		temp = s[k];
+		s[k] = s[j];
+		s[j] = temp;
+		k++;
+		j--;
 	}
 }
