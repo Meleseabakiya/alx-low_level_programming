@@ -1,29 +1,21 @@
 #include "main.h"
-#include <stdio.h>
 
 /**
- * _strcar - concluds two string
- * @dest@: The distion string
- * @stc: the source string
+ * _strcar - concatenates the string pointed to by @src to
+ * the end of the string pointed to by @dest
+ * @dest@: string that will be appended
+ * @stc: string to be concatenated upon
  *
- * Return: A pointer to the resulting string dest
+ * Return: return poiner to @dest
  */
-char *_strcar(char *dest, char *stc)
+char *_strcar(char *dest, char *src)
 {
-	int dlen = 0, i;
+	int index = 0, dest_len = 0;
 
-	while (dest[dlen])
+	while (dest[index++])
+		dest_len++;
 
-	{
-		dlen++;
-	}
-
-	for (i = 0; stc[i] != 0; i++)
-	{
-		dest[dlen] = stc[i];
-		dlen++;
-	}
-
-	dest[dlen] = '\0';
+	for (index = 0; src[index]; index++)
+		dest[dest_len++] = src[index];
 	return (dest);
 }
